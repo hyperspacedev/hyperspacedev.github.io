@@ -170,6 +170,11 @@ div.highlighter-rouge {
     color: white;
 }
 
+.jumbo.mini {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
 .jumbo-title {
     font-family: var(--heading-font-family);
     font-size: 2.85em;
@@ -354,6 +359,7 @@ div.highlighter-rouge {
 .post-list-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
 }
 
 .plist-card {

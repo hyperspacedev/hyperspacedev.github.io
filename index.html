@@ -14,7 +14,7 @@ product:
     <div class="post-list-grid">
         {% for post in site.posts limit:3 %}
             {% assign author = site.data.team[post.author] %}
-        <a href="{{ post.url}}">
+        <a href="{{ post.url }}">
             <div class="plist-card">
                 <div class="plist-background">
                     <img class="plist-image" src="{{ author.mastodon.image }}"/>

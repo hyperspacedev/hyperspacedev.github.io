@@ -1,4 +1,4 @@
-<div class="jumbo">
+<div class="jumbo {% if include.product.action == null %}mini{% endif %}">
     <div class="jumbo-text">
         <p class="jumbo-title">{{ include.product.title }}</p>
         <p class="jumbo-detail">{{ include.product.detail }}</p>
