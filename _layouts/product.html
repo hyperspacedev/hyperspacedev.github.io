@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <div class="jumbo-bg">
+            {% include navbar.html invisible=true %}
+            {% include jumbotron.html product=page.product %}
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+        {% include footer.html %}
+        {% include scripts.html %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+---
+title: Press
+layout: default
+permalink: /blog
+---
+<div class="section">
+    <h1>Press</h1>
+</div>
+<div class="section">
+    {% for post in site.posts %}
+    <div class="post-list-item">
+        <h2>{{ post.title }}</h2>
+        <h4>{{ post.author }} | {{ post.date | date: '%B %d, %Y' }}</h4>
+        <p>{{ post.excerpt | strip_html }}</p>
+        <a href="{{ post.url }}" class="post-list-button">Read more</a>
+    </div>
+    {% if forloop.last == false %}
+        <hr>
+    {% endif %}
+    {% endfor %}
+</div>

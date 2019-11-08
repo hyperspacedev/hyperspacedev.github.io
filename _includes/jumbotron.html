@@ -1,0 +1,13 @@
+<div class="jumbo">
+    <div class="jumbo-text">
+        <p class="jumbo-title">{{ include.product.title }}</p>
+        <p class="jumbo-detail">{{ include.product.detail }}</p>
+        <br/>
+        {% if include.product.action != null %}
+        <a class="jumbo-button" href="{{ page.product.action.link }}">{{ include.product.action.name }}</a>
+        {% endif %}
+    </div>
+    <div class="jumbo-img">
+        <img src="{{ include.product.image }}" />
+    </div>
+</div>

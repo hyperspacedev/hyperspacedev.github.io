@@ -1,0 +1,123 @@
+---
+title: Download
+layout: default
+permalink: /download
+---
+<style>
+    .section:first-of-type {
+        text-align: center;
+    }
+
+    .dl-title {
+        font-size: 2.5em;
+    }
+
+    .dl-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dl-item {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .dl-item .fab, .dl-item .fa {
+        font-size: 4em;
+    }
+
+    .dl-section-name {
+        font-family: var(--heading-font-family);
+        font-weight: 500;
+        font-size: 1.25em;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dl-store-buttons img {
+        height: 48px;
+        width: auto;
+    }
+
+    @media(max-width: 768px) {
+        .dl-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
+<div class="section">
+    <h1 class="dl-title">Download Hyperspace</h1>
+    <p>Ready to try Hyperspace out on your device? Download the app for your computer here.</p>
+</div>
+<div class="section">
+    <h2>Hyperspace Desktop</h2>
+    <p>Our original, cross-platform client for the fediverse.</p>
+    <p><span class="dl-store-buttons">
+<!--        <a href="https://itunes.apple.com/us/app/hyperspace/id1454139710?mt=12">-->
+        <!--            <img src="{{ site.baseurl }}/assets/images/mas.svg"/>-->
+        <!--        </a>-->
+    <a href="https://snapcraft.io/hyperspace"> <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" /> </a>
+    </span></p>
+    <hr/>
+    <div class="dl-container">
+        <div class="dl-item">
+            <p><i class="fab fa-windows"></i></p>
+            <p class="dl-section-name">Windows</p>
+            <p>Requires Windows 7 or better with a 64-bit processor</p>
+            <p>
+                <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/Hyperspace.Setup.{{ site.download_config.desktop.version }}.exe">Download Setup EXE</a>
+            </p>
+        </div>
+        <div class="dl-item">
+            <p><i class="fab fa-apple"></i></p>
+            <p class="dl-section-name">macOS</p>
+            <p>Requires macOS 10.10 Yosemite or better with a 64-bit processor</p>
+            <p>
+                <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/Hyperspace-{{ site.download_config.desktop.version }}.dmg">Download DMG</a>
+            </p>
+        </div>
+        <div class="dl-item">
+            <p><i class="fab fa-linux"></i></p>
+            <p class="dl-section-name">Linux</p>
+            <p>Requires a version of Linux with a 64-bit processor</p>
+            <p>
+                <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/Hyperspace-{{ site.download_config.desktop.version }}.AppImage">Download AppImage</a>
+            </p>
+            <p>
+                <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/Hyperspace-{{ site.download_config.desktop.version }}_amd64.deb">Download Debian file</a>
+            </p>
+        </div>
+        <div class="dl-item">
+            <p><i class="fa fa-globe"></i></p>
+            <p class="dl-section-name">Web Files</p>
+            <p>Suitable for hosting Hyperspace on your own web server.</p>
+            <p>
+                <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/Hyperspace.-{{ site.download_config.desktop.version }}_static.zip">Download ZIP</a>
+            </p>
+        </div>
+        <div class="dl-item">
+            <p><i class="fa fa-laptop-code"></i></p>
+            <p class="dl-section-name">Source Code</p>
+            <p>Suitable for building your own version of Hyperspace.</p>
+            <p>
+                <a href="https://github.com/hyperspacedev/hyperspace/archive/v{{ site.download_config.desktop.version }}.zip">Download ZIP</a>
+            </p>
+            <p>
+                <a href="https://github.com/hyperspacedev/hyperspace/archive/v{{ site.download_config.desktop.version }}.tar.gz">Download Tarball</a>
+            </p>
+        </div>
+        <div class="dl-item">
+            <p><i class="fa fa-mobile"></i></p>
+            <p class="dl-section-name">Mobile Devices</p>
+            <p>No downloads available, but can be added to home screen.</p>
+            <p><a href="{{ site.baseurl }}/docs/home-screen">Learn how</a></p>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h2>Can't find what you're looking for?</h2>
+    <p>Head to the current release's GitHub page to look for your download and read the release notes.</p>
+    <p>
+        <a href="{{ site.download_config.desktop.base_url }}v{{ site.download_config.desktop.version}}/">Visit current desktop release (v{{ site.download_config.desktop.version }}) &rightarrow;</a>
+    </p>
+</div>

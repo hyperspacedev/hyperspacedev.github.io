@@ -1,0 +1,16 @@
+title: Hyerspace
+author: Hyperspace Developers
+
+markdown: kramdown
+highlighter: rouge
+
+download_config:
+  desktop:
+    base_url: "https://github.com/hyperspacedev/hyperspace/releases/"
+    version: "1.0.2"
+
+collections:
+  docs:
+    output: true
+  releases:
+    output: true

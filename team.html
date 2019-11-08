@@ -1,0 +1,41 @@
+---
+title: Who we Are
+layout: default
+permalink: /team
+---
+<style>
+    .team-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-member {
+        text-align: center;
+        padding: 8px;
+    }
+
+    @media(max-width: 768px) {
+        .team-layout {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
+<div class="section">
+    <h1>This is us</h1>
+    <p>The Hyperspace team is committed to making the best Mastodon and fediverse client yet. We're proud to bring you Hyperspace and love Mastodon as much as you do. Feel free to chat with us on Mastodon or in our community on Matrix!</p>
+</div>
+<div class="section">
+    <div class="team-layout">
+        {% for team_member in site.data.team %}
+            {% assign member = team_member[1] %}
+            <div class="team-member">
+                <a href="https://{{ member.mastodon.address }}/{{ member.mastodon.username }}">
+                    <img src="{{ member.mastodon.image }}" class="team-member-image"/>
+                </a>
+                <p class="team-member-name">{{ member.name }}</p>
+                <p>{{ member.role }}</p>
+                <p><a href="https://{{ member.mastodon.address }}/{{ member.mastodon.username }}"><i class="fab fa-mastodon mastodon-font"></i> {{ member.mastodon.username }}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,75 @@
+---
+title: Documentation
+layout: doc
+permalink: /docs
+description: Welcome to the official documentation center for Hyperspace! Browse through our documents list below.
+---
+<style>
+    .doc-page-section {
+        text-align: center;
+    }
+    
+    .doc-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .doc-card {
+        box-shadow: var(--theme-shadow);
+        margin: 4px;
+        padding: 8px;
+        border-radius: 2px;
+        text-align: center;
+        transition: box-shadow 0.25s;
+    }
+
+    .doc-card:hover {
+        box-shadow: var(--theme-shadow-big);
+        transition: box-shadow 0.25s;
+    }
+
+    .doc-card .fa {
+        font-size: 2.5em;
+    }
+
+    .doc-card small {
+        color: #888888;
+    }
+
+    .doc-cards a {
+        color: black;
+    }
+
+    @media(max-width: 768px) {
+        .doc-cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
+<div class="doc-cards">
+    {% for doc in site.docs %}
+    <a href="{{ doc.url }}">
+        <div class="doc-card">
+            <p><i class="fa fa-book"></i></p>
+            <h4>{{ doc.title }}</h4>
+            <p>{{ doc.description }}</p>
+            <small>{{ doc.product }}</small>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<div class="section">
+    <h3>Release Notes</h3>
+    <p>You can access the release notes for our current projects here.</p>
+</div>
+<div class="doc-cards">
+    {% for note in site.releases %}
+    <a href="{{ note.url }}">
+        <div class="doc-card">
+            <p><i class="fa fa-book-open"></i></p>
+            <h4>{{ note.title }}</h4>
+            <p>{{ note.description }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>

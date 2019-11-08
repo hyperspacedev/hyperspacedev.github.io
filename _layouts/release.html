@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        {% include navbar.html %}
+        <div class="doc-head">
+            <h1 class="doc-title">{{ page.title }} Release Notes</h1>
+            <p>{{ page.description }}</p>
+        </div>
+        <div class="content">
+            <div class="doc-section">
+                {{ content }}
+            </div>
+        </div>
+        {% include footer.html %}
+        {% include scripts.html %}
+    </body>
+</html>

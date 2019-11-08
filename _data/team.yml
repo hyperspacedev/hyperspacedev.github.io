@@ -1,0 +1,21 @@
+Marquis Kurt:
+  name: Marquis Kurt
+  role: Founder
+  mastodon:
+    username: "@alicerunsonfedora"
+    address: "mastodon.social"
+    image: "https://files.mastodon.social/accounts/avatars/000/367/895/original/DSCF8653.jpeg"
+Nodar Sotkilava:
+  name: Nodar Sotkilava
+  role: Developer
+  mastodon:
+    username: "@Nomad1556"
+    address: "mastodon.social"
+    image: "https://files.mastodon.social/accounts/avatars/000/794/735/original/3d9525f102b2d6ba.jpg"
+Ben Rock:
+  name: Ben Rock
+  role: Media Manager
+  mastodon:
+    username: "@bio_ico"
+    address: "mastodon.social"
+    image: "https://files.mastodon.social/accounts/avatars/000/597/056/original/6719971b6abb9b38.png"

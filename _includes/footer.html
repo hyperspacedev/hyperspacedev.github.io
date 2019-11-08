@@ -1,0 +1,15 @@
+<div class="footer">
+    <div class="footer-content">
+        {% for segment in site.data.footer %}
+        <div class="footer-segment">
+            <b>{{ segment.name }}</b>
+            {% for action in segment.links %}
+            <p><a href="{{ action.link }}">{{ action.name }}</a></p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Licensed under NPL v1.</p>
+    </div>
+</div>

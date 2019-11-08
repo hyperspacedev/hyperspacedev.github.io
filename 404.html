@@ -1,0 +1,40 @@
+---
+title: Page Not Found
+layout: default
+permalink: /404.html
+---
+<style>
+    .main {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        text-align: center;
+    }
+
+    .header-text {
+        font-size: 10em;
+        margin: 0;
+        padding: 0;
+    }
+
+    .supplement-text {
+        font-size: 2em;
+    }
+
+    @media(max-width: 768px) {
+        .header-text {
+            font-size: 5em;
+        }
+
+        .supplement-text {
+            font-size: 1.35em;
+        }
+    }
+</style>
+
+<div class="main">
+    <h1 class="header-text">404</h1>
+    <p class="supplement-text">The page you are looking for can't be found on this website.</p>
+    <p>Check that the URL is correct or that the page exists.</p>
+    <br/>
+    <p><a href="{{ site.baseurl }}">&leftarrow; Go Back</a></p>
+</div>
