@@ -73,6 +73,12 @@ div.highlighter-rouge {
     background-color: #f4f4f4;
 }
 
+.site-content {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
 .navbar {
     background: var(--color-theme-gradient);
     background-color: var(--color-theme-main);
@@ -230,9 +236,11 @@ div.highlighter-rouge {
 }
 
 .doc-section {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
     line-height: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .doc-section img {
@@ -243,8 +251,8 @@ div.highlighter-rouge {
 }
 
 .post-list-item {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .post-list-button {
@@ -298,6 +306,7 @@ div.highlighter-rouge {
 .content {
     padding-left: 10%;
     padding-right: 10%;
+    flex-grow: 1;
 }
 
 .content .section {
@@ -463,6 +472,11 @@ div.highlighter-rouge {
 
     .jumbo-title {
         font-size: 2em;
+    }
+
+    .doc-section {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .post-list-grid {

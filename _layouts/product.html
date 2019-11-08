@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
-    <body>
+    <nav>
         <div class="jumbo-bg">
             {% include navbar.html invisible=true %}
             {% include jumbotron.html product=page.product %}
         </div>
+    </nav>
+    <body class="site-content">
         <div class="content">
             {{ content }}
         </div>

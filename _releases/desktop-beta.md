@@ -1,7 +1,7 @@
 ---
 title: Hyperspace Desktop (beta)
 layout: release
-description: Hyperspace Desktop is the beta version of our cross-platform client for the fediverse.
+description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
 ## 1.0.0 Golden Master ( October 9, 2019)
 
