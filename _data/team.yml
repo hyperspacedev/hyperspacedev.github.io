@@ -1,13 +1,13 @@
 Marquis Kurt:
   name: Marquis Kurt
-  role: Founder
+  role: Founder/Admin
   mastodon:
     username: "@alicerunsonfedora"
     address: "mastodon.social"
     image: "https://files.mastodon.social/accounts/avatars/000/367/895/original/DSCF8653.jpeg"
 Nodar Sotkilava:
   name: Nodar Sotkilava
-  role: Developer
+  role: Co-administrator
   mastodon:
     username: "@Nomad1556"
     address: "mastodon.social"
