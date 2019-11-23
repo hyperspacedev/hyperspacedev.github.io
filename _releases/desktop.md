@@ -3,6 +3,17 @@ title: Hyperspace Desktop
 layout: release
 description: Hyperspace Desktop is the cross-platform client for Mastodon.
 ---
+## 1.0.3 (November 16, 2019)
+This update is recommended for all developers and users of Hyperspace Desktop. We thank our Patrons for help making this release possible.
+
+**What's new:**
+
+- Resolves an issue where hovering over the Expansion Panel on CW posts could cause confusion (fixes #115, [HD-2])
+- Rebrands specific parts of "Hyperspace" to "Hyperspace Desktop"
+- Resolves an issue where Pleroma accounts will get a blank page on the About section of the app caused by a localStorage delay (fixes [HD-17])
+
+Special thanks to @travisk-codes for helping make this release possible.
+
 ## 1.0.2 (November 3, 2019)
 This update is recommended for all developers and users of Hyperspace. We thank our Patrons for help making this release possible.
 
