@@ -7,7 +7,7 @@ highlighter: rouge
 download_config:
   desktop:
     base_url: "https://github.com/hyperspacedev/hyperspace/releases/"
-    version: "1.0.3"
+    version: "1.0.4"
 
 collections:
   docs:
