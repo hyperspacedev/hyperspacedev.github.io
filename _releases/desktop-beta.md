@@ -3,6 +3,20 @@ title: Hyperspace Desktop (beta)
 layout: release
 description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
+## 1.1.0-beta1 (November 24, 2019)
+This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
+
+**What's new:**
+
+- Improved search by allowing a search with # instead of tag:
+- Added audio uploading to the composer
+- New custom audio player for playing and downloading audio files
+- Introduced Activity page
+- Split requests and recommendations to separate pages
+- Created a setting to toggle character limit
+- Implemented support for uploading images by pasting into the composer
+- Improved empty page design
+
 ## 1.0.0 Golden Master (October 9, 2019)
 
 What's new:
@@ -38,7 +52,7 @@ What's new:
 
 - Adds new profile redesign (fixes #81)
 - Fix theming issues on macOS Catalina (fixes #75)
-- Adds Plemora support (fixes #70, fixes #69, and improves on #65)
+- Adds Pleroma support (fixes #70, fixes #69, and improves on #65)
 - Runs macOS theme changes only when macOS (fixes #72)
 - Adds support for notarizing the app
 

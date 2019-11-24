@@ -3,6 +3,15 @@ title: Hyperspace Desktop
 layout: release
 description: Hyperspace Desktop is the cross-platform client for Mastodon.
 ---
+## 1.0.4 (November 24, 2019)
+This update is recommended for all developers and users of Hyperspace Desktop. We thank our Patrons for help making this release possible.
+
+**What's new:**
+
+- Resolve an issue where the emergency login system failed to load on desktop apps (fixes #129 , HD-23)
+- Resolve an issue where the emoji picker crashes the app on instances that do not have custom emojis (fixes HD-21)
+- Update the menu bar to not have a hard-coded title
+
 ## 1.0.3 (November 16, 2019)
 This update is recommended for all developers and users of Hyperspace Desktop. We thank our Patrons for help making this release possible.
 
