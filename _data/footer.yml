@@ -28,9 +28,9 @@
       link: "/privacy"
 - name: Get in Touch
   links:
-    - name: Matrix Room
-      link: "https://https://matrix.to/#/#hypermasto:matrix.org"
-    - name: Discord Server
+    - name: Chat on Discord
       link: "https://discord.gg/c69AXwk"
+    - name: Join Matrix Room
+      link: "https://https://matrix.to/#/#hypermasto:matrix.org"
     - name: Email Us
       link: "mailto:hyperspacedev@marquiskurt.net"
