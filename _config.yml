@@ -8,7 +8,7 @@ download_config:
   desktop:
     base_url: "https://github.com/hyperspacedev/hyperspace/releases/"
     version: "1.0.4"
-    beta_version: "1.1.0-beta1"
+    beta_version: "1.1.0-beta2"
 
 collections:
   docs:

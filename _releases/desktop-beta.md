@@ -3,6 +3,20 @@ title: Hyperspace Desktop (beta)
 layout: release
 description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
+## 1.1.0-beta2 (December 23, 2019)
+This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
+
+**What's new:**
+
+- Update the title bar in developer mode to better match its background
+- Fixes a bug where the clipboard would try to upload non-images in the composer
+- Adds a back button to move back when viewing a thread or profile page
+- Adds support for temporary drafts stored in `sessionStorage` (cleared after a browser session)
+- Fixes an issue where pressing "follow account" on a notification allows to infinitely follow the account without a check (closes #16)
+- Fixes an issue where Settings might jump places while waiting to fetch account data
+- Updates the appearance of reblogged posts and account names
+- Adds an option to view more posts in a masonry layout on wider screens (implements #56)
+
 ## 1.1.0-beta1 (November 24, 2019)
 This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
 
