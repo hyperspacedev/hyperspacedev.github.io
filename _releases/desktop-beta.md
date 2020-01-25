@@ -3,6 +3,19 @@ title: Hyperspace Desktop (beta)
 layout: release
 description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
+## 1.1.0-beta3 (January 25, 2020)
+This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
+
+What's new:
+
+- Resolves an issue where custom emojis on author names didn't render properly (fixes #154)
+- Resolves an issue where GIFV files didn't load properly on Firefox/Chrome (fixes #157)
+- Expands masonry layout to the search page and profile pages (implements #150)
+- Resolves an issue where a draft of a published post would be saved unintentionally (fixes #166)
+- (Developer-only) Introduces a new TimelinePage component to replace the Home, Local, and Public pages
+
+> Note: This release also updates the software license to NPLv4+. Please review the changes in the license.
+
 ## 1.1.0-beta2 (December 23, 2019)
 This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
 
