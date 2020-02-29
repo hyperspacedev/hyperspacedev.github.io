@@ -3,6 +3,34 @@ title: Hyperspace Desktop (beta)
 layout: release
 description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
+## 1.1.0-beta4 (February 28, 2020)
+This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers**.
+
+**What's new:**
+
+### Additions
+
+- Adds support for subdirectory installations (`https://example.com/app/`)
+- Adds option for infinite scrolling on timeline pages
+- Also resolves issue where columns appear unbalanced (#160)
+
+### Changes
+
+- Changes behavior of account follow/unfollow on notifications where a user has followed another (#162)
+- (Developer) Changes behavior of `getConfig` to automatically set the `location` field in-app to `localhost:3000` when running in developer mode and through `react-scripts start`
+
+### Bugfixes
+
+- Resolves an issue where redirection after token authorization fails due to a blank URI
+- Resolves an issue where `AppLayout` breaks due to `PrivateRoute` not redirecting properly
+- Resolves several issues with post state updates:
+  - Where unreblogging lost the reblogging property
+  - Where unreblogging a post was impossible (#146)
+  - Where requests for post state actions would be doubled
+- Resolves an issue where names and descriptions on notification items overflow on smaller devices/resolutions (#163)
+- Resolves an issue where drafts of published posts were saved (#166)
+- Resolves an issue where account names on posts would overflow (#175)
+
 ## 1.1.0-beta3 (January 25, 2020)
 This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers.**
 
