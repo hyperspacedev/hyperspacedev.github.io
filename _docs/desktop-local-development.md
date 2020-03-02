@@ -34,6 +34,8 @@ Before running the local server, you'll need to change the `location` property i
     "location": "https://localhost:3000",
 ```
 
+> Note: As of Hyperspace v1.1.0-beta4, this step is no longer necessary as Hyperspace will automatically change the location field for you when running through `npm start`.
+
 Once this setting is changed, you can proceed to running the local server as follows:
 
 ```
