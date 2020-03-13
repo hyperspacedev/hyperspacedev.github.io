@@ -14,8 +14,5 @@ permalink: /blog
         <p>{{ post.excerpt | strip_html }}</p>
         <a href="{{ post.url }}" class="post-list-button">Read more</a>
     </div>
-    {% if forloop.last == false %}
-        <hr>
-    {% endif %}
     {% endfor %}
 </div>

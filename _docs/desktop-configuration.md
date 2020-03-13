@@ -54,7 +54,7 @@ There are some extra keys for handling actions such as federation, registrations
 | Subkey | Default value | Description |
 | --- | --- | ------------------------
 | `name` | n/a | The name of the administrator. This can be a display name or real name. |
-| `account` | n/a | The account ID number on the Mastodon network. |
+| `account` | n/a | The account ID number on the Mastodon network defined in `defaultInstance`. |
 
 ### Federation information
 
@@ -92,6 +92,8 @@ There are other fields responsible for handling app information such as version,
 | `license` | n/a | **Required:** The license information for the app, if it falls under a different license than what Hyperspace includes. |
 | `repository` | (Repo URL) | The URL to the repository containing the source code if it is open-source. |
 | `location` | "dynamic" | **Required:** The URL that points to your Hyperspace installation, or 'dynamic' if it should be inferred from `window.location`. When building the desktop application, this is set to 'desktop'. |
+
+> Note: Older versions of Hyperspace Desktop up to v1.1.0-beta3 do not support setting location to a subdirectory (ex.: `https://example.com/app/`). Newer versions of Hyperspace Desktop starting with v1.1.0-beta4 support subdirectory installations.
 
 ### License information
 

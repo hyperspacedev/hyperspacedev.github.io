@@ -55,7 +55,7 @@ blockquote {
 code {
     font-family: var(--code-font-family);
     -webkit-font-smoothing: initial;
-    -moz-osx-font-smoothing: auto;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code.highlighter-rouge {
@@ -256,19 +256,24 @@ div.highlighter-rouge {
 }
 
 .post-list-item {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    margin: 24px 0;
+    padding: 24px 32px;
+    box-shadow: var(--theme-shadow);
 }
 
 .post-list-button {
-    background-color: #f4f4f4;
+    background-color: #e4e4e4;
     color: black;
     padding: 8px 28px;
     border-radius: 2px;
-    box-shadow: var(--theme-shadow);
+    /* box-shadow: var(--theme-shadow); */
     font-weight: 700;
     text-transform: uppercase;
     transition: background-color 0.10s;
+}
+
+.post-list-button:hover {
+    background-color: #f4f4f4;
 }
 
 .post-head {

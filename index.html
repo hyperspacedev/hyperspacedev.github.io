@@ -2,7 +2,7 @@
 title: Homepage
 layout: product
 product:
-    title: Meet the fluffiest client for the fediverse.
+    title: The fediverse at your fingertips.
     detail: "The next generation of the fluffiest client for the fediverse* is here. With new features ranging from custom themes and multi-user support to complete customization for developers and IT administrators, Hyperspace is the best Mastodon client yet."
     image: "./assets/images/homepage-hero.png"
     action:
@@ -11,6 +11,7 @@ product:
 ---
 <div class="section">
     <h1>Latest posts</h1>
+    <p><a href="/blog/">Read all posts &rightarrow;</a></p>
     <div class="post-list-grid">
         {% for post in site.posts limit:3 %}
             {% assign author = site.data.team[post.author] %}
@@ -31,5 +32,5 @@ product:
     </div>
 </div>
 <div class="section">
-    <small>*Hyperspace currently doesn't offer support for users of the Gab platform.</small>
+    <small>*Hyperspace currently doesn't offer support for users of the Gab platform. <a href="/2019/10/26/statement.html">Learn more &rightarrow;</a></small>
 </div>

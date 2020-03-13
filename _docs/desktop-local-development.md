@@ -9,7 +9,7 @@ Hyperspace is a React-based product built with Create React App and allows for h
 
 ## Requirements
 - Git
-- Node.js 8 or higher
+- Node.js 10 or higher
 
 ## Setting up the environment
 
@@ -28,18 +28,12 @@ npm start # or npm test
 
 ## Starting a local server
 
-Before running the local server, you'll need to change the `location` property in the Hyperspace configuration file to point to your local server. In `config.json`, change the location field as seen below:
-
-```json
-    "location": "https://localhost:3000",
-```
-
-> Note: As of Hyperspace v1.1.0-beta4, this step is no longer necessary as Hyperspace will automatically change the location field for you when running through `npm start`.
-
-Once this setting is changed, you can proceed to running the local server as follows:
+To start a local server instance of Hyperspace, run the following command in the project directory:
 
 ```
 npm start
 ```
 
 This will start the server and let you make changes and see them live.
+
+> Note: In Hyperspace v1.1.0-beta3 and older, you'll need to modify the `location` field in your config.json to use `https://localhost:3000` as the address.

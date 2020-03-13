@@ -4,7 +4,7 @@
       link: "https://hyperspaceapp.herokuapp.com"
     - name: Try Online (Beta)
       link: "https://hyperspaceapp-next.herokuapp.com"
-    - name: Download
+    - name: Downloads
       link: "/download"
 - name: Projects
   links:
