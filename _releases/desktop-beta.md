@@ -3,6 +3,24 @@ title: Hyperspace Desktop (beta)
 layout: release
 description: Hyperspace Desktop is the beta version of our cross-platform client.
 ---
+## 1.1.0-beta5 (March 30, 2020)
+This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. This is the final beta release for the v1.1.x series and is intended to reflect the final feature set for the next feature update. Developers, administrators, and users can expect this release to be almost identical to the upcoming stable release.
+
+**What's new:**
+
+### Additions
+- Adds support for server announcements, available at /announcements or in the `AppLayout`
+- Adds anchor links to Settings subsections such as Appearance (`#sp-appearance`) and Notifications (`#sp-notifications`)
+- Adds quick link to notification settings in Notifications page
+
+### Changes
+- Updates project dependencies to latest NPM packages
+- Changes default notification behavior from prompting for user notifications on first load to prompting when enabling it in Settings
+- Changes "Enable push notifications" toggle to request browser notifications if not explicitly set
+
+### Bugfixes
+- Resolves issue where clicking "Full username" directs to old documentation page and 404s (closes #187)
+
 ## 1.1.0-beta4 (February 28, 2020)
 This is a beta release for the upcoming Hyperspace Desktop feature update, v1.1.0. **Do not use this version for production-ready servers**.
 
