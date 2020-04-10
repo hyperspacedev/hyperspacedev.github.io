@@ -26,3 +26,10 @@ Audrey Maxwell:
     username: "@uchibrah"
     address: "mastodon.social"
     image: "https://files.mastodon.social/accounts/avatars/000/991/491/original/897bf1370e010a20.png"
+Travis Kohlbeck:
+  name: Travis Kohlbeck
+  role: Developer, Desktop
+  mastodon:
+    username: "@tdk"
+    address: "mastodon.social"
+    image: "https://files.mastodon.social/accounts/avatars/000/509/673/original/e-i-tau-z.jpg"
