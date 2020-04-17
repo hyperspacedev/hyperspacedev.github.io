@@ -3,6 +3,18 @@ title: Hyperspace Desktop
 layout: release
 description: Hyperspace Desktop is the cross-platform client for Mastodon.
 ---
+## 1.1.1 (April 17, 2020)
+This update is recommended for all users and developers of Hyperspace Desktop v1.1.1.
+
+**What's new:**
+
+## Bugfixes
+- Resolves a critical login issue in which users are not able to login due to an incorrect `location` auto-resolution on the desktop apps or installations that use `dynamic` (fixes #195)
+- Resolved a bug where the account menu wouldn't close after selecting an item (fixes #197)
+
+## 1.1.0 (April 11, 2020)
+See v1.1.0 beta release notes.
+
 ## 1.0.4 (November 24, 2019)
 This update is recommended for all developers and users of Hyperspace Desktop. We thank our Patrons for help making this release possible.
 
