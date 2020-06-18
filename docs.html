@@ -2,7 +2,7 @@
 title: Documentation
 layout: doc
 permalink: /docs/
-description: Welcome to the official documentation center for Hyperspace! Browse through our documents list below.
+description: The official documentation center for Hyperspace projects.
 ---
 <style>
     .doc-cards {
@@ -43,23 +43,20 @@ description: Welcome to the official documentation center for Hyperspace! Browse
         }
     }
 </style>
-<div class="doc-cards">
-    {% for doc in site.docs %}
-    <a href="{{ doc.url }}">
-        <div class="doc-card">
-            <p><i class="fa fa-book"></i></p>
-            <h4>{{ doc.title }}</h4>
-            <p>{{ doc.description }}</p>
-            <small>{{ doc.product }}</small>
-        </div>
-    </a>
-    {% endfor %}
+<div class="section">
+    <p>Welcome to the official documentation center for Hyperspace! Select a document to read from the docs list or search for a topic.</p>
 </div>
 <div class="section">
-    <h3>Release Notes</h3>
+    <h2>Release Notes</h2>
     <p>You can access the release notes for our current projects here.</p>
+    {% for note in site.releases %}
+    <div>
+        <a href="{{ note.url }}"><h4>{{ note.title }}</h4></a>
+        <p style="margin-bottom: 0;">{{ note.description }}</div>
+    </div>
+    {% endfor %}
 </div>
-<div class="doc-cards">
+<!-- <div class="doc-cards">
     {% for note in site.releases %}
     <a href="{{ note.url }}">
         <div class="doc-card">
@@ -69,4 +66,4 @@ description: Welcome to the official documentation center for Hyperspace! Browse
         </div>
     </a>
     {% endfor %}
-</div>
+</div> -->
