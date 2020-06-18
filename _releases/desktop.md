@@ -3,12 +3,27 @@ title: Hyperspace Desktop
 layout: release
 description: Hyperspace Desktop is the cross-platform client for Mastodon.
 ---
+## 1.1.2 (June 17, 2020)
+This update is recommended for all users and developers of Hyperspace Desktop v1.1.1.
+
+**What's new:**
+
+### Changes
+- Updates the welcome page design with an '@' symbol to prevent sign-in ambiguity (implements #205).
+- (Developer) Updates some pages to make use of nullish coalescing and optional chaining.
+- (Developer) Updates dependencies and Electron to v9.0.4.
+
+### Bugfixes
+- Resolves a bug where the avatar in the app layout wouldn't update after the avatar was changed (fixes #194).
+- Resolves a bug where the About page doesn't load properly if some information is missing (fixes #200 and #202).
+- Resolves an issue where Settings might error out for browsers that don't support notifications (fixes #206).
+
 ## 1.1.1 (April 17, 2020)
 This update is recommended for all users and developers of Hyperspace Desktop v1.1.1.
 
 **What's new:**
 
-## Bugfixes
+### Bugfixes
 - Resolves a critical login issue in which users are not able to login due to an incorrect `location` auto-resolution on the desktop apps or installations that use `dynamic` (fixes #195)
 - Resolved a bug where the account menu wouldn't close after selecting an item (fixes #197)
 
