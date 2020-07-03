@@ -8,8 +8,10 @@ product: Hyperspace Desktop
 The Hyperspace Desktop source code also includes the necessary tools to start building the desktop app versions of Hyperspace using technologies like Electron. This document will cover how to get started building the desktop versions.
 
 ## Requirements
+
 - Git
-- Node.js 8 or higher
+- Node.js 10 or higher
+- (macOS only) Xcode 10 or higher
 
 ## Gather the source materials
 
@@ -28,88 +30,180 @@ npm install
 
 The project should now contain all of the necessary Node modules to build the desktop apps.
 
-> Note: If the dependency list includes `electron-builder@21.2.0`, you'll need to modify a file to get notarization and code signing working if you plan to build for macOS. [Learn more &rsaquo;](https://github.com/electron-userland/electron-builder/issues/4151#issuecomment-520663362)
+Make sure you set the `location` field in `public/config.json` to `"desktop"` before continuing.
 
+## Build commands
 
-## Gather macOS development materials
+You can run any of the following commands to build a release for the desktop:
 
-If you are building for macOS and are on a Mac, you'll need to download the respective certificates, provisioning profiles, and entitlements lists. You can generate these certificates and profiles on the Apple Developer website. You'll need the following in the `desktop` directory:
+- `npm run build:desktop-all`: Builds the desktop apps for all platforms (eg. Windows, macOS, Linux). Will run `npm run build` before building.
+- `npm run build:win`: Builds the desktop app for Windows without running `npm run build`.
+- `npm run build:mac`: Builds the desktop apps for macOS without running `npm run build`. See the details below for more information on building for macOS.
+- `npm run build:mas`: Builds the desktop apps for the Mac App Store without running `npm run build`. See the details below for more information on building for macOS.
+- `npm run build:linux`: Builds the desktop apps for Linux (eg. Debian package, AppImage, and Snap) without running `npm run build`.
+- `npm run build:linux-select-targets`: Builds the desktop app for Linux without running `npm run build`. _Targets are required as parameters._
 
-- Provisioning profiles for the desktop (`nonmas.provisionprofile`) and Mac App Store version (`embedded.provisionprofile`).
-- An `info.plist` that includes the team identifier and group identifier.
+The built files will be available under `dist` that can be uploaded to your app distributor or website.
 
-Additionally, you'll need to set up your keychain to store your App Store Connect password. You can learn more on [Electron's documentation](https://github.com/electron/electron-notarize#safety-when-using-appleidpassword).
+## Extra steps for macOS
 
-### Entitlements
+The macOS builds of Hyperspace Desktop require a bit more effort and resources to build and distribute accordingly. The following is a quick guide to building Hyperspace Desktop for macOS and for the Mac App Store.
 
-You'll also need to create entitlements files in the `desktop` directory that list the following entitlements for your app:
+### Gather your tools
 
-- `com.apple.security.files.downloads.read-write`
-- `com.apple.security.files.user-selected.read-write`
-- `com.apple.security.allow-unsigned-executable-memory`
+To create a code-signed and notarized version of Hyperspace Desktop, you'll need to acquire some provisioning profiles and certificates from a valid Apple Developer account.
 
-For the Mac App Store, you'll need extra entitlements due to the sandboxed environment:
+For certificates, make sure your Mac has the following certificates installed:
 
-- `com.apple.security.app-sandbox`
-- `com.apple.security.files.downloads.read-write`
-- `com.apple.security.files.user-selected.read-write`
-- `com.apple.security.allow-unsigned-executable-memory`
-- `com.apple.security.network.client`
+- 3rd Party Mac Developer Application
+- 3rd Party Mac Developer Installer
+- Developer ID Application
+- Developer ID Installer
+- Mac Developer
 
-For the child entitlements on the Mac App Store (inherited `entitlements.mas.inherit.plist`):
+The easiest way to handle this is by opening Xcode and going to **Preferences &rsaquo; Accounts** and create the certificates from "Manage Certificates".
 
-- `com.apple.security.app-sandbox`
-- `com.apple.security.inherit`
-- `com.apple.security.files.downloads.read-write`
-- `com.apple.security.files.user-selected.read-write`
-- `com.apple.security.allow-unsigned-executable-memory`
-- `com.apple.security.network.client`
+You'll also need to [create a provisioning profile for **Mac App Store** distribution](https://developer.apple.com/account/resources/profiles/add) and save it to the `desktop` folder as `embedded.provisonprofile`.
 
-> ⚠️ Note that the inherited permissions are the same as that of the parent. This is due to an issue where the hardened runtime fails to pass down the inherited properties (see [electron/electron#20560](https://github.com/electron/electron/issues/20560#issuecomment-546110018)). This might change in future versions of macOS.
+### Create your entitlements files
 
-## Building the desktop apps
+You'll also need to create the entitlements files in the `desktop` directory that declares the permissions for Hyperspace Desktop. Replace `TEAM_ID` with the appropriate Apple Developer information and `BUNDLE_ID` with the bundle ID of your app.
 
-Before starting to build the desktop apps, you need to modify `config.json` to tell it to use the desktop URL. In `public/config.json`, change the `location` field to the following:
+#### entitlements.mac.plist
 
-```json
-    "location": "desktop",
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+  </dict>
+</plist>
 ```
 
-To build all of the desktop apps at once, you can run the following:
+#### entitlements.mas.plist
 
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.cs.allow-jit</key>
+	<true/>
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+	<true/>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>TEAM_ID.BUNDLE_ID</string>
+	</array>
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+</dict>
+</plist>
 ```
-npm run build-desktop
+
+#### entitlements.mas.inherit.plist
+
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.inherit</key>
+	<true/>
+	<key>com.apple.security.cs.allow-jit</key>
+	<true/>
+	<key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+	<true/>
+	</dict>
+</plist>
 ```
 
-This will proceed to build and sign the Windows, macOS, and Linux builds for you.
+#### entitlements.mas.loginhelper.plist
 
-### Building specific apps
-
-To build for a specific platform, you'll need to first build the project:
-
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+  </dict>
+</plist>
 ```
-npm run build
+
+#### info.plist
+
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ElectronTeamID</key>
+	<string>TEAM_ID</string>
+	<key>com.apple.developer.team-identifier</key>
+	<string>TEAM_ID</string>
+	<key>com.apple.application-identifier</key>
+	<string>TEAM_ID.BUNDLE_ID</string>
+</dict>
+</plist>
 ```
 
-And then run any of the following commands below:
+### Edit `notarize.js`
 
-- `npm run build-desktop-win`: Builds the desktop app for Windows.
-- `npm run build-desktop-darwin`: Builds the desktop apps for macOS (eg. disk image, Mac App Store).
-- `npm run build-desktop-linux`: Builds the desktop apps for Linux (eg. Debian package, AppImage, and Snap).
-- `npm run build-desktop-linux-select`: Builds the desktop app for Linux. _Target is required as a parameter._
-
-The built products for any command will appear in `dist`.
-
-## macOS Notarization
-
-Starting with macOS 10.15 Catalina, apps are required to be signed and notarized. The Hyperspace source code includes the proper tools to enable notarization and should be handled whenever you run `build-desktop` or `build-desktop-darwin`. You'll want to modify `desktop/notarize.js` and change the username, account, and app identifier fields to match your app's information. As an example:
+You'll also need to edit `notarize.js` in the `desktop` directory. Replace `<TEAM_ID>`, `<BUNDLE_ID>`, and `<APPLE_DEVELOPER_EMAIL>` with the appropriate information from the app and your account from Apple Developer.
 
 ```js
-return await notarize({
-    appBundleId: 'com.example.hyperspace-clone',
+// notarize.js
+// Script to notarize Hyperspace for macOS
+// © 2019 Hyperspace developers. Licensed under Apache 2.0.
+
+const { notarize } = require("electron-notarize");
+
+// This is pulled from the Apple Keychain. To set this up,
+// follow the instructions provided here:
+// https://github.com/electron/electron-notarize#safety-when-using-appleidpassword
+const password = `@keychain:AC_PASSWORD`;
+
+exports.default = async function notarizing(context) {
+  const { electronPlatformName, appOutDir } = context;
+  if (electronPlatformName !== "darwin") {
+    return;
+  }
+
+  console.log("Notarizing Hyperspace...");
+
+  const appName = context.packager.appInfo.productFilename;
+
+  return await notarize({
+    appBundleId: "<BUNDLE_ID>",
     appPath: `${appOutDir}/${appName}.app`,
-    appleId: "johnappleseed@example.com",
+    appleId: "<APPLE_DEVELOPER_EMAIL>",
     appleIdPassword: password,
-    ascProvider: "XXXXXXXXXXX"
+    ascProvider: "<TEAM_ID>",
   });
+};
 ```
+
+Note that the password is pulled from your keychain. You'll need to create an app password and store it in your keychain as `AC_PASSWORD`.
+
+### Build the apps
+
+Run any of the following commands to build Hyperspace Desktop for the Mac:
+
+- `npm run build:mac` - Builds the macOS app in a DMG container.
+- `npm run build:mac-unsigned` - Similar to `build:mac`, but skips code signing and notarization. **Use only for CI or in situations where code signing and notarization is not available.**
+- `npm run build:mas` - Builds the Mac App Store package.
