@@ -14,6 +14,15 @@ permalink: /team
         padding: 8px;
     }
 
+    .team-member-link {
+        margin-bottom: 4px;
+    }
+
+    .team-member-address {
+        color: #999999;
+        margin-top: 0;
+    }
+
     @media(max-width: 768px) {
         .team-layout {
             grid-template-columns: repeat(1, 1fr);
@@ -34,7 +43,8 @@ permalink: /team
                 </a>
                 <p class="team-member-name">{{ member.name }}</p>
                 <p>{{ member.role }}</p>
-                <p><a href="https://{{ member.mastodon.address }}/{{ member.mastodon.username }}"><i class="fab fa-mastodon mastodon-font"></i> {{ member.mastodon.username }}</a></p>
+                <p class="team-member-link"><a href="https://{{ member.mastodon.address }}/{{ member.mastodon.username }}"><i class="fab fa-mastodon mastodon-font"></i> {{ member.mastodon.username }}</a></p>
+                <p class="team-member-address"><small>@{{ member.mastodon.address }}</small></p>
             </div>
         {% endfor %}
     </div>

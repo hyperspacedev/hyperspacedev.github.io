@@ -10,6 +10,8 @@
   links:
     - name: Hyperspace Desktop
       link: "/about"
+    # - name: Hyperspace Starlight
+    #   link: "/starlight"
 - name: Contribute
   links:
     - name: Contribute on GitHub
