@@ -3,6 +3,19 @@ title: Hyperspace Desktop
 layout: release
 description: Hyperspace Desktop is the cross-platform client for Mastodon.
 ---
+## 1.1.4 (October 3, 2020)
+This update is recommended for all users and developers of Hyperspace Desktop.
+
+**What's new:**
+
+- Changes Welcome behavior to now automatically check input validation while typing
+- Updates icon to new macOS Big Sur design language
+- Changes default instance from mastodon.social to mastodon.online
+- Resolves an issue where switching accounts caused the window to go blank in the desktop apps
+- Adds a new instance name validation bypass for when the instance name isn't detected
+  - Changes text from "Instance name is invalid" to "We couldn't recognize that instance."
+  - **Note**: This does _not_ bypass the disallowed domains check.
+
 ## 1.1.2 (June 17, 2020)
 This update is recommended for all users and developers of Hyperspace Desktop v1.1.1.
 
