@@ -1,3 +1,5 @@
 _site/
 .idea/
-.vscode/.DS_Store
+.vscode/
+
+**/.DS_Store
