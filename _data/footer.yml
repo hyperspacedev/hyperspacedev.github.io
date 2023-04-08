@@ -1,9 +1,9 @@
 - name: Get Hyperspace
   links:
     - name: Try Online
-      link: "https://hyperspaceapp.herokuapp.com"
+      link: "#"
     - name: Try Online (Beta)
-      link: "https://hyperspaceapp-next.herokuapp.com"
+      link: "#"
     - name: Downloads
       link: "/download"
 - name: Projects
@@ -16,8 +16,6 @@
   links:
     - name: Contribute on GitHub
       link: "https://github.com/hyperspacedev"
-    - name: Support on Patreon
-      link: "https://patreon.com/hyperspacedev"
 - name: About Us
   links:
     - name: Who we Are
@@ -25,14 +23,6 @@
     - name: Mastodon Account
       link: "https://mastodon.social/@hyperspacedev"
     - name: Blog
-      link: "/blog"
+      link: "/blog/"
     - name: Privacy Policy
       link: "/privacy"
-- name: Get in Touch
-  links:
-    - name: Chat on Discord
-      link: "https://discord.gg/c69AXwk"
-    - name: Join Matrix Room
-      link: "https://matrix.to/#/#hypermasto:matrix.org"
-    - name: Email Us
-      link: "mailto:software@marquiskurt.net"
